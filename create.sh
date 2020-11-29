@@ -6,4 +6,4 @@ elif [ -d "$#" ]; then
     echo "name already taken"
 else
     mkdir "$1"
-fi#!/bin/bash
+fi
