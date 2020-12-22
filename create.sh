@@ -2,8 +2,10 @@
 
 if [ "$#" -ne 1 ]; then
     echo "Error: Number of arguments must be 1."
+    exit 1
 elif [ -d "$1" ]; then
     echo "Error: Name already taken."
+    exit 2
 else
    ./P.sh "$0"
     mkdir "$1"
