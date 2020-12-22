@@ -11,15 +11,17 @@ elif [ ! -d "$2" ]; then
     echo "Error: $2 does not exist.">&2
     exit 1
 fi
-./P.sh "$0"
-if grep -Fxq "$2" "$1"/friends; then
+
+.P.sh "$0/wall"
+if grep -Fxq "$1" "$2/friends"; then
     echo "Ok: Message posted to $2's wall."
-    echo "$2" : "$3" >> "$1"/wall
-    ./V.sh "$0"
+    echo "$1":"$3" >> "$2/wall"
+    ./V.sh "$0/wall"
     exit 0
+
 else
     echo "$1 is not friends with $2."
-    ./V.sh "$0"
+    ./V.sh "$0/wall"
     exit 1
 fi
 
