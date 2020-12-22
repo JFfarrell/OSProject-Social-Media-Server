@@ -12,9 +12,9 @@ elif [ ! -d "$2" ]; then
     exit 1
 fi
 ./P.sh "$0"
-if grep -Fxq "$1" "$2"/friends; then
+if grep -Fxq "$2" "$1"/friends; then
     echo "Ok: Message posted to $2's wall."
-    echo "$1" : "$3" >> "$2"/wall
+    echo "$2" : "$3" >> "$1"/wall
     ./V.sh "$0"
     exit 0
 else
