@@ -12,16 +12,15 @@ elif [ ! -d "$1" ]; then
     exit 1
 fi
 
-./P.sh "$1/wall"
+./P.sh "$1"
 if grep -Fxq "$2" "$1/friends"; then
     echo "$2":"$3" >> "$1/wall"
     echo "Ok: Message posted to $1 wall."
-    ./V.sh "$1/wall"
+    ./V.sh "$1"
     exit 0
 
 else
     echo "$2 is not friends with $2.">&2
-    ./V.sh "$1/wall"
+    ./V.sh "$1"
     exit 1
 fi
-./V.sh
