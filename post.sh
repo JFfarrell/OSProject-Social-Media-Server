@@ -16,16 +16,16 @@ elif [ ! -d "$sender" ]; then
     exit 1
 fi
 
-./P.sh "$receiver"
+./P.sh "$receiver/wall"
 if grep -Fxq "$sender" "$receiver/friends"; then
-    echo "Ok: Message posted to $receiver's wall."
     echo "$receiver":"$post" >> "$receiver/wall"
-    ./V.sh "$receiver"
+    echo "Ok: Message posted to $receiver's wall."
+    ./V.sh "$receiver/wall"
     exit 0
 
 else
     echo "$receiver is not friends with $sender."
-    ./V.sh "$receiver"
+    ./V.sh "$receiver/wall"
     exit 1
 fi
 
