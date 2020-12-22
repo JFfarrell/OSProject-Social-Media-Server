@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"$2"=sender
-"$1"=receiver
-"$3"=post
+receiver="$1"
+sender="$2"
+post="$3"
 
 if [ "$#" -ne 3 ]; then
     echo "Error: This function requires three arguments.">&2
@@ -25,7 +25,7 @@ if grep -Fxq "$sender" "$receiver/friends"; then
 
 else
     echo "$receiver is not friends with $sender."
-    ./V.sh "$reciever/wall"
+    ./V.sh "$receiver/wall"
     exit 1
 fi
 
