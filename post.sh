@@ -15,7 +15,7 @@ fi
 ./P.sh "$1/wall"
 if grep -Fxq "$2" "$1/friends"; then
     echo "$2":"$3" >> "$1/wall"
-    echo "Ok: Message posted to $receiver's wall."
+    echo "Ok: Message posted to $1 wall."
     ./V.sh "$1/wall"
     exit 0
 
