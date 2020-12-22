@@ -1,27 +1,31 @@
 #!/bin/bash
 
+"$2"=sender
+"$1"=receiver
+"$3"=post
+
 if [ "$#" -ne 3 ]; then
     echo "Error: This function requires three arguments.">&2
     exit 1
 
-elif [ ! -d "$1" ]; then
-    echo "Error: User does not exist.">&2
+elif [ ! -d "$receiver" ]; then
+    echo "Error: $receiver does not exist.">&2
     exit 1
-elif [ ! -d "$2" ]; then
-    echo "Error: $2 does not exist.">&2
+elif [ ! -d "$sender" ]; then
+    echo "Error: $sender does not exist.">&2
     exit 1
 fi
 
-.P.sh "$0/wall"
-if grep -Fxq "$1" "$2/friends"; then
-    echo "Ok: Message posted to $2's wall."
-    echo "$1":"$3" >> "$2/wall"
-    ./V.sh "$0/wall"
+./P.sh "$receiver/wall"
+if grep -Fxq "$sender" "$receiver/friends"; then
+    echo "Ok: Message posted to $receiver's wall."
+    echo "$receiver":"$post" >> "$receiver/wall"
+    ./V.sh "$receiver/wall"
     exit 0
 
 else
-    echo "$1 is not friends with $2."
-    ./V.sh "$0/wall"
+    echo "$receiver is not friends with $sender."
+    ./V.sh "$reciever/wall"
     exit 1
 fi
 
