@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "$1"
+
 if [ "$#" -ne 1 ]; then
     echo "Error: Number of arguments must be 1."
 elif [ -d "$1" ]; then
