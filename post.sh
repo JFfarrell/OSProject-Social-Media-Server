@@ -7,9 +7,11 @@ if [ "$#" -ne 3 ]; then
 elif [ ! -d "$2" ]; then
     echo "Error: $2 does not exist.">&2
     exit 1
+
 elif [ ! -d "$1" ]; then
     echo "Error: $1 does not exist.">&2
     exit 1
+
 fi
 
 ./P.sh "$1/wall"

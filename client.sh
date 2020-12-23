@@ -28,6 +28,7 @@ fi
 
 while read output; do
     echo "$output"
+
 done<"$clientpipe"
 
 rm "$clientpipe"

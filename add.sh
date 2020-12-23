@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ "$#" -ne 2 ]; then
     echo "Error: Must provide two arguments." >&2
     exit 1
@@ -23,3 +24,4 @@ else
     ./V.sh "$1/friends"
     exit 0
 fi
+
